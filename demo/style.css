@@ -3,10 +3,13 @@
 }
 
 html, body {
+  font-family: sans-serif;
   height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   background-color: #000;
 }
@@ -36,6 +39,7 @@ body {
 }
 
 .binclock-container {
+  flex-grow: 1;
   display: block;
   margin-top: 2vw;
 }
@@ -77,6 +81,13 @@ body {
 }
 
 .binclock-decimal,
-.binclock-label {
+.binclock-label,
+.footer a {
   color: #de2f96;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #080808;
 }
