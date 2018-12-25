@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: Shrikhand, cursive;
+  text-shadow: 2px 3px 0px rgba(0, 0, 0, .8);
+}
+
+.heading .clock {
+  color: #de2f96;
+}
+
+.sub-heading {
+  font-style: italic;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.binclock-container {
+  display: block;
+  margin-top: 2vw;
+}
+
+.binclock-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.binclock-list li {
+  display: inline-block;
+  width: 10vw;
+  height: 10vw;
+  min-width: 50px;
+  min-height: 50px;
+  line-height: 10vw;
+  font-family: Shrikhand, cursive;
+  font-size: 24px;
+  border: .5vw solid #000;
+}
+
+.binclock-binary {
+  color: transparent;
+  border-radius: 1.5vw;
+  transition: transform .5s, background-color .5s;
+}
+
+.binclock-binary.on {
+  transform: rotateY(180deg);
+  background-color: #de2f96;
+  box-shadow: 0 -5px 0 5px rgba(0, 0, 0, .2) inset;
+}
+
+.binclock-binary.off {
+  background-color: #080808;
+}
+
+.binclock-decimal,
+.binclock-label {
+  color: #de2f96;
+}
