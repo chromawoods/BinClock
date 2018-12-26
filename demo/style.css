@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  font-size: 100%;
   background-color: #000;
 }
 
@@ -83,11 +84,46 @@ body {
 .binclock-decimal,
 .binclock-label,
 .footer a {
+  display: inline-block;
+  padding: 5px;
   color: #de2f96;
+  transition: color .2s;
 }
 
-.footer {
+.footer a:hover,
+.footer a:active {
+  color: #fff;
+}
+
+.footer { 
   padding: 20px;
-  text-align: center;
+  color: #fff;
   background-color: #080808;
+}
+
+@media all and (max-width: 720px) {
+
+  body {
+    font-size: 90%;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+
+  .binclock-list {
+    display: inline-block;
+    max-width: 33.333%;
+  }
+
+  .binclock-label {
+    max-height: 20px;
+  }
+
+  .binclock-list li {
+    width: 32vw;
+    height: 32vw;
+    font-size: 18px;
+  }
+
 }
