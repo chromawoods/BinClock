@@ -135,6 +135,8 @@ const binClock = (function() {
 
     setInterval(onInterval, 1000);
 
+    return _clockData;
+
   }
 
 

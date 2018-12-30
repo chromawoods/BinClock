@@ -16,6 +16,9 @@
     <p class="sub-heading">Because you want to know what binary time it is.</p>
   </header>
   <time id="binclock" class="binclock-container"></time>
+  <div class="binclock-interactions">
+    <button class="binclock-cheat" id="labels-toggler">Cheat!</button>
+  </div>
   <footer class="footer">
     <nav>
       <a href="https://weber.nu">By Andreas Weber</a> &bull; 
@@ -23,7 +26,11 @@
     </nav>
   </footer>
   <script>
-    binClock('binclock');
+    const bc = binClock('binclock');
+    const btnCheat = document.getElementById('labels-toggler');
+    btnCheat.addEventListener('click', function() {
+      bc.el.classList.toggle('has-visible-labels');
+    });
   </script>
 </body>
 </html>
