@@ -61,7 +61,9 @@ body {
   flex-grow: 1;
 }
 
-.binclock-cheat {
+.binclock-btn {
+  min-width: 160px;
+  margin: 1vw;
   padding: 4px 16px;
   font-family: Shrikhand, cursive;
   font-size: 18px;
@@ -74,8 +76,8 @@ body {
   transition: background-color .2s, color .2s;
 }
 
-.binclock-cheat:hover, 
-.binclock-cheat:active {
+.binclock-btn:hover, 
+.binclock-btn:active {
   color: #de2f96;
   background-color: #080808;
   cursor: pointer;
@@ -85,7 +87,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  overflow: hidden;
   text-align: center;
 }
 
@@ -103,8 +105,28 @@ body {
 
 .binclock-binary {
   color: transparent;
-  border-radius: 1.5vw;
-  transition: transform .5s, background-color .5s;
+  transition: transform .5s, background-color .5s, border-radius .5s, transform .5s;
+}
+
+.binclock-layout-dots .binclock-binary {
+  border-radius: 50%;
+}
+
+.binclock-layout-diamond .binclock-binary {
+  border-radius: 1vw;
+  transform: rotate(45deg) scale(.7) !important;
+}
+
+.binclock-layout-square .binclock-binary {
+  border-radius: 0;
+}
+
+.binclock-layout-square .binclock-binary.on {
+  background-color: blueviolet;
+}
+
+.binclock-layout-diamond .binclock-binary.on {
+  background-color: goldenrod;
 }
 
 .binclock-binary.on {
@@ -143,7 +165,8 @@ body {
 
 @media all and (max-width: 720px) {
 
-  body {
+  body,
+  .binclock-btn {
     font-size: 90%;
   }
 

@@ -15,9 +15,10 @@
     <h1 class="heading">Bin<span class="clock">Clock</span></h1>
     <p class="sub-heading">Because you want to know what binary time it is.</p>
   </header>
-  <time id="binclock" class="binclock-container"></time>
+  <time id="binclock" class="binclock-container binclock-layout-dots"></time>
   <div class="binclock-interactions">
-    <button class="binclock-cheat" id="labels-toggler">Cheat!</button>
+    <button class="binclock-btn" id="labels-toggler">Cheat!</button>
+    <button class="binclock-btn" id="transformer">Transform!</button>
   </div>
   <footer class="footer">
     <nav>
@@ -28,8 +29,19 @@
   <script>
     const bc = binClock('binclock');
     const btnCheat = document.getElementById('labels-toggler');
+    const btnTransformer = document.getElementById('transformer');
+    const modifierClasses = ['binclock-layout-dots', 'binclock-layout-diamond', 'binclock-layout-square'];
+
+    let currentModifierClassIndex = 0;
+
     btnCheat.addEventListener('click', function() {
       bc.el.classList.toggle('has-visible-labels');
+    });
+
+    btnTransformer.addEventListener('click', function() {
+      currentModifierClassIndex += 1;
+      bc.el.classList.remove.apply(bc.el.classList, modifierClasses);
+      bc.el.classList.add(modifierClasses[currentModifierClassIndex % modifierClasses.length]);
     });
   </script>
 </body>
