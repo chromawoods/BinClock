@@ -25,7 +25,7 @@ body {
   margin: 0;
   font-size: 40px;
   font-weight: normal;
-  font-family: Shrikhand, cursive;
+  font-family: monospace;
   text-shadow: 2px 3px 0px rgba(0, 0, 0, .8);
 }
 
@@ -65,21 +65,22 @@ body {
   min-width: 160px;
   margin: 1vw;
   padding: 4px 16px;
-  font-family: Shrikhand, cursive;
+  font-family: Shrikhand, monospace;
   font-size: 18px;
-  color: #fff;
   border-radius: 6px;
-  border: 2px solid #fff;
-  background-color: #de2f96;
+  border: 2px solid #de2f96;
   box-shadow: 0 -2px 0 2px rgba(0, 0, 0, .2) inset;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, .3);
-  transition: background-color .2s, color .2s;
+  transition: background-color .2s, color .2s, border-color .2s, color .2s;
+  color: #de2f96;
+  background-color: #080808;
 }
 
 .binclock-btn:hover, 
 .binclock-btn:active {
-  color: #de2f96;
-  background-color: #080808;
+  color: #fff;
+  background-color: #de2f96;
+  border-color: #fff;
   cursor: pointer;
 }
 
