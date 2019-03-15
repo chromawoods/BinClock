@@ -31,26 +31,7 @@ const binClock = (function() {
 
   function render() {
 
-    _units.forEach(function(unit) {
-
-      const binaryValue = _clockData[unit].binaryValue.split('');
-
-      _clockData[unit].decimalElement.innerText = _clockData[unit].decimalValue;
-      
-      _clockData[unit].binaryElements.forEach(function(el, index) {
-
-        const value = parseInt(binaryValue[index] ? binaryValue[index] : '0');
-
-        el.innerText = value;
-
-        if (!el.classList.contains(_classNames[value])) {
-          el.classList.remove(_classNames[0], _classNames[1]);
-          el.classList.add(_classNames[value]);
-        }
-
-      });
-
-    });
+    _units.forEach(updateUnit);
 
   }
 
@@ -66,7 +47,29 @@ const binClock = (function() {
   }
 
 
-  function onInterval() {
+  function updateUnit(unit) {
+
+    const binaryValue = _clockData[unit].binaryValue.split('');
+
+    _clockData[unit].decimalElement.innerText = _clockData[unit].decimalValue;
+    
+    _clockData[unit].binaryElements.forEach(function(el, index) {
+
+      const value = parseInt(binaryValue[index] ? binaryValue[index] : '0');
+
+      el.innerText = value;
+
+      if (!el.classList.contains(_classNames[value])) {
+        el.classList.remove(_classNames[0], _classNames[1]);
+        el.classList.add(_classNames[value]);
+      }
+
+    });
+
+  }
+
+
+  function updateTimeValues() {
 
     const date = new Date();
 
@@ -79,6 +82,12 @@ const binClock = (function() {
     _clockData.seconds.decimalValue = date.getSeconds();
     _clockData.seconds.binaryValue = getPaddedBinaryString(_clockData.seconds.decimalValue);
 
+  }
+
+  
+  function onInterval() {
+
+    updateTimeValues();
     render();
 
   }
